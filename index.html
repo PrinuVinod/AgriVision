@@ -442,21 +442,23 @@
                   </div>
                </div>
                <div class="col-md-8 offset-md-2">
-                  <form id="request" class="main_form">
+                  <form id="request" class="main_form" name="contactForm">
                      <div class="row">
                         <div class="col-md-12 ">
-                           <input class="form_control" placeholder="Your Name" type="type" name=" Name"> 
+                           <input class="form_control" placeholder="Your Name" type="text" name="name" id="name" for="name" required> 
                         </div>
                         <div class="col-md-12">
-                           <input class="form_control" placeholder="Phone Number" type="type" name="Phone Number">                          
+                           <input class="form_control" placeholder="Phone Number" type="number" name="phone number" id="phone number" for="phone number" required>                          
                         </div>
-                       
+                       <div class="col-md-12">
+                           <input class="form_control" placeholder="Email" type="email" name="email" id="email" for="email" required>                          
+                        </div>
                         <div class="col-md-12">
-                           <input class="textarea" placeholder="Message" type="type" name="message"> 
+                           <input class="textarea" placeholder="Message" id="message" name="message" for="message" required> 
                         </div>
                         <div class="col-md-12">
                            <div class="group_btn">
-                           <button class="send_btn">Send</button>
+                           <button class="send_btn">Send Message</button>
                         </div>
                      </div>
                   </form>
@@ -538,5 +540,6 @@
       <script src="js/owl.carousel.min.js"></script>
       <script src="js/bootstrap-datepicker.min.js"></script>
       <script src="js/custom.js"></script>
+      <script src="js/main.js"></script>
    </body>
 </html>
