@@ -4,6 +4,6 @@ const scriptURL = 'https://script.google.com/macros/s/AKfycby16_-vfX_xHjFyyIlfIl
 			form.addEventListener('submit', e => {
 			  e.preventDefault()
 			  fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-				.then(response => alert("Thank you! Prinu will contact you soon." ))
+				.then(response => alert("Thank you! We will contact you soon." ))
 				.catch(error => console.error('Error!', error.message))
 			})
