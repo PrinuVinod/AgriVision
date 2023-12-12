@@ -1,4 +1,4 @@
-# AgriVision :Transforming Agriculture Through Precision Weed Detection
+# AgriVision: Transforming Agriculture Through Precision Weed Detection
 
 AgriVision is a groundbreaking agricultural technology that harnesses the power of computer vision and machine learning to revolutionize weed detection and management in farming. This innovative system empowers farmers to identify and combat weeds efficiently, leading to increased crop yields, reduced resource wastage, and sustainable agricultural practices. AgriVision operates in real-time, utilizing high-resolution imaging to spot weeds and provide farmers with tailored recommendations for precise intervention. By integrating cutting-edge technology with the age-old practice of farming, AgriVision paves the way for a more prosperous and environmentally conscious agricultural future.
 
