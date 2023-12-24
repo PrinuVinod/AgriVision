@@ -1,0 +1,23 @@
+#progress {
+            width: 100%;
+            height: 20px;
+            background-color: #eee;
+        }
+
+        #progress-bar {
+            width: 0%;
+            height: 100%;
+            background-color: #007bff;
+        }
+
+        #video {
+            width: 100%;
+            max-width: 600px;
+            margin: auto;
+        }
+
+        #output {
+            width: 100%;
+            max-width: 600px;
+            margin: auto;
+        }
