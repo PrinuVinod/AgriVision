@@ -66,6 +66,9 @@
       <br>
       <br>
       <br>
+      <!-- Add this button to your detection.html -->
+      <button id="startDetection">Start Detecting</button>
+
 
       <!-- footer -->
       <div class="copyright">
@@ -88,6 +91,26 @@
    <script src="../static/js/owl.carousel.min.js"></script>
    <script src="../static/js/bootstrap-datepicker.min.js"></script>
    <script src="../static/js/custom.js"></script>
+   <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+   <script>
+      $(document).ready(function () {
+         $("#startDetection").click(function () {
+            // Send an AJAX request to the Flask server
+            $.ajax({
+               type: "GET",
+               url: "/start_detection",  // Update the URL to the endpoint you want to trigger
+               success: function (response) {
+                  // Handle the response if needed
+                  console.log(response);
+               },
+               error: function (error) {
+                  // Handle errors if any
+                  console.error(error);
+               }
+            });
+         });
+      });
+   </script>
 </body>
 
 </html>
