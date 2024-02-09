@@ -1,3 +1,5 @@
+#app.py
+
 import subprocess
 from flask import Flask, render_template, Response
 import cv2
@@ -15,7 +17,6 @@ def detection():
 @app.route('/start_detection')
 def start_detection():
     try:
-        # Use subprocess to run the detect.py file
         subprocess.run(['python', 'detect.py'], check=True)
         return "Detection started!"
     except subprocess.CalledProcessError as e:
