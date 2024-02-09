@@ -27,3 +27,7 @@ BackEnd > ***JavaScript***
 
 ### `Check Out our Website`
 [AgriVision](https://prinuvinod.github.io/AgriVision/)
+
+```
+pip install flask-socketio
+```
