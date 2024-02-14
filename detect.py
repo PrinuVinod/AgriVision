@@ -1,5 +1,3 @@
-#detect.py
-
 import cv2
 import numpy as np
 import time
@@ -16,8 +14,11 @@ COLORS = np.random.randint(0, 255, size=(len(LABELS), 3), dtype="uint8")
 print("Loading YOLO model...")
 net = cv2.dnn.readNetFromDarknet(configPath, weightsPath)
 
-# Start capturing video from the built-in camera
-cap = cv2.VideoCapture(0)  # '0' represents the default camera index
+# Specify the full URL including the port number used by the IP Webcam app
+camera_address = 'http://172.20.10.3:4747/video'
+
+# Start capturing video from the phone's camera
+cap = cv2.VideoCapture(camera_address)
 
 while True:
     # Read a frame from the camera
