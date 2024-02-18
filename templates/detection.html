@@ -68,24 +68,37 @@
       <br>
       <br>
       <br>
-      <!-- Add this button to your detection.html -->
-      <button id="startDetection">Start Detecting</button>
 
-
-      <!-- footer -->
-      <div class="copyright">
-         <div class="container">
-            <div class="row d_flex">
-               <div class="col-md-8">
-                  <p>© 2023 All Rights Reserved.</a></p>
-               </div>
+      <div class="container mt-5">
+         <div class="row">
+            <div class="col-md-6 offset-md-3">
+               <form id="uploadForm" enctype="multipart/form-data">
+                  <div class="form-group">
+                     <label for="fileInput">Choose File</label>
+                     <input type="file" class="form-control-file" id="fileInput" accept=".jpg, .jpeg, .png">
+                  </div>
+                  <div class="form-group">
+                     <img id="imagePreview" class="img-fluid" alt="Image Preview" style="display: none;">
+                  </div>
+                  <button type="button" class="btn btn-primary" id="startDetection">Start Detecting</button>
+               </form>
             </div>
          </div>
       </div>
-   </div>
-   </footer>
-   <!-- end footer -->
-   </div>
+
+      <!-- footer -->
+      <footer>
+         <div class="copyright">
+            <div class="container">
+               <div class="row d_flex">
+                  <div class="col-md-8">
+                     <p>© 2023 All Rights Reserved.</a></p>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </footer>
+      <!-- end footer -->
    <!-- Javascript files-->
    <script src="../static/js/jquery.min.js"></script>
    <script src="../static/js/bootstrap.bundle.min.js"></script>
@@ -94,25 +107,7 @@
    <script src="../static/js/bootstrap-datepicker.min.js"></script>
    <script src="../static/js/custom.js"></script>
    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-   <script>
-      $(document).ready(function () {
-         $("#startDetection").click(function () {
-            // Send an AJAX request to the Flask server
-            $.ajax({
-               type: "GET",
-               url: "/start_detection",  // Update the URL to the endpoint you want to trigger
-               success: function (response) {
-                  // Handle the response if needed
-                  console.log(response);
-               },
-               error: function (error) {
-                  // Handle errors if any
-                  console.error(error);
-               }
-            });
-         });
-      });
-   </script>
+   <script src="../static/js/jquery.min.js"></script>
 </body>
 
 </html>
