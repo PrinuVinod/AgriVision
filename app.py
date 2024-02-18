@@ -1,5 +1,7 @@
-from flask import Flask, render_template, jsonify
+from flask import Flask, render_template, request, jsonify
 import subprocess
+import os
+from pymongo import MongoClient
 
 app = Flask(__name__)
 
@@ -29,13 +31,28 @@ def service():
 
 @app.route('/start_detection', methods=['POST'])
 def start_detection():
-    script_path = 'detect.py'
+    # Specify the directory for saving images
+    upload_folder = 'uploads'
+    os.makedirs(upload_folder, exist_ok=True)
 
-    try:
-        subprocess.run(['python', script_path], check=True)
-        return jsonify({'status': 'success', 'message': 'Detection started successfully'})
-    except subprocess.CalledProcessError as e:
-        return jsonify({'status': 'error', 'message': f'Error starting detection: {e}'})
+    # Check if the 'file' key is in the request.files dictionary
+    if 'file' not in request.files:
+        return "No file part"
+
+    uploaded_image = request.files['file']
+    if uploaded_image.filename == '':
+        return "No selected file"
+
+    # Save the uploaded image with a unique name
+    image_path = os.path.join(upload_folder, 'user_image.jpg')
+    uploaded_image.save(image_path)
+
+    # Perform detection using the saved image
+    detection_script_path = 'detect.py'
+    subprocess.run(['python', detection_script_path, image_path])
+
+    # Return a response (you may customize the response based on your needs)
+    return "Detection started successfully"
 
 if __name__ == '__main__':
     app.run(debug=True)

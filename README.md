@@ -29,5 +29,5 @@ BackEnd > ***JavaScript***
 [AgriVision](https://prinuvinod.github.io/AgriVision/)
 
 ```
-pip install flask
+pip install flask pymongo pillow
 ```

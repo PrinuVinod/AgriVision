@@ -1,6 +1,15 @@
 import cv2
 import numpy as np
 import time
+import sys
+import os
+
+# Check if the image path is provided as a command-line argument
+if len(sys.argv) != 2:
+    print("Usage: python detect.py <image_path>")
+    sys.exit(1)
+
+image_path = sys.argv[1]
 
 # loading class labels YOLO model was trained on
 labelsPath = 'obj.names'
@@ -15,7 +24,7 @@ print("Loading Images from disk...")
 net = cv2.dnn.readNetFromDarknet(configPath, weightsPath)
 
 # load our input image and grab its spatial dimensions
-image = cv2.imread('input/crop_1.jpeg')
+image = cv2.imread('uploads/user_image.jpg')
 (H, W) = image.shape[:2]
 
 # parameters
@@ -89,7 +98,7 @@ if len(idxs) > 0:
 
         # draw a bounding box rectangle and label on the image
         color = [int(c) for c in COLORS[classIDs[i]]]
-        cv2.rectangle(image, (x, y), (x + w - 100, y + h - 100), color, 2)
+        cv2.rectangle(image, (x, y), (x + w, y + h), color, 2)
         print("[ACCURACY] : accuracy -> ", confidences[i])
         print("[OUTPUT]   : detected label -> ", LABELS[classIDs[i]])
         text = "{} : {:.4f}".format(LABELS[classIDs[i]], confidences[i])
@@ -99,5 +108,18 @@ if len(idxs) > 0:
 cv2.imshow('Output', image)
 cv2.waitKey(0)
 cv2.destroyAllWindows()
+
+# Save the annotated image
+output_folder = 'output'
+
+# Create the output folder if it doesn't exist
+os.makedirs(output_folder, exist_ok=True)
+
+output_image_path = os.path.join(output_folder, 'annotated_image.jpg')
+cv2.imwrite(output_image_path, image)
+
 print("[STATUS]   : Completed")
 print("[END]")
+
+# Optionally, you can return the path of the output image if needed
+print("Output image saved at:", output_image_path)

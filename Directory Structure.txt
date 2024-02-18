@@ -1,0 +1,21 @@
+- AgriVision
+  - static
+    - css
+    - js
+    - images
+  - templates
+    - index.html
+    - detection.html
+    - about.html
+    - contact.html
+    - gallery.html
+    - service.html
+  - uploads
+    - (user_image.jpg - uploaded images are saved here)
+  - output
+    - annotated_image.jpg (annotated images are saved here)
+  - app.py
+  - detect.py
+  - crop_weed_detection.weights
+  - crop_weed.cfg
+  - obj.names
