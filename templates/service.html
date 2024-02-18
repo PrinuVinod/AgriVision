@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="zxx">
+  <head>
+    <title>AgriVision | Service</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="Mulching Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
+      Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+    <script>
+      addEventListener("load", function () {
+      	setTimeout(hideURLbar, 0);
+      }, false);
+      
+      function hideURLbar() {
+      	window.scrollTo(0, 1);
+      }
+    </script>
+    <link href="../static/css/bootstrap.min.css" rel="stylesheet" type="text/css" media="all">
+    <link href="../static/css/font-awesome.min.css" rel="stylesheet">
+    <link href="../static/css/style.css" rel='stylesheet' type='text/css' media="all">
+	<link href="//fonts.googleapis.com/css?family=Poiret+One&amp;subset=cyrillic,latin-ext" rel="stylesheet">
+	<link href="//fonts.googleapis.com/css?family=Mada:200,300,400,500,600,700,900&amp;subset=arabic" rel="stylesheet">
+  </head>
+  <body>
+    <!--headder-->
+    <div class="header-outs inner_page-banner " id="home">
+      <div class="headder-top">
+        <!-- nav -->
+        <nav>
+          <div id="logo">
+            <h1><a href="{{ url_for('index') }}">AgriVision</a></h1>
+          </div>
+          <label for="drop" class="toggle">Menu</label>
+          <input type="checkbox" id="drop">
+          <ul class="menu mt-2">
+            <li class="active"><a href="{{ url_for('index') }}">Home</a></li>
+            <li class="mx-lg-3 mx-md-2 my-md-0 my-1"><a href="{{ url_for('about') }}">About</a></li>
+            <li><a href="{{ url_for('service') }}">Services</a></li>
+            <li><a href="{{ url_for('detection') }}">Try Out</a></li>
+            <li><a href="{{ url_for('gallery') }}" class="drop-text">Gallery</a></li>
+            <li><a href="{{ url_for('contact') }}">Contact Us</a></li>
+          </ul>
+        </nav>
+        <!-- //nav -->
+      </div>
+    </div>
+    <!--//headder-->
+    <!-- short -->
+    <div class="using-border py-3">
+      <div class="inner_breadcrumb  ml-4">
+        <ul class="short_ls">
+          <li>
+            <a href="{{ url_for('index') }}">Home</a>
+            <span>/ /</span>
+          </li>
+          <li>service</li>
+        </ul>
+      </div>
+    </div>
+    <!-- //short-->
+    <!-- service -->
+    <section class="service py-lg-4 py-md-3 py-sm-3 py-3" id="service">
+      <div class="container py-lg-5 py-md-4 py-sm-4 py-3">
+        <h3 class="title text-center mb-lg-5 mb-md-4 mb-sm-4 mb-3">Our Services</h3>
+        <div class="row">
+          <div class="col-lg-4 col-md-6 col-sm-6 service-grid-wthree text-center">
+            <div class="ser-Agriculture-grid">
+              <div class="about-icon mb-md-4 mb-3">
+                <span class="fa fa-camera" aria-hidden="true"></span>
+              </div>
+              <div class="ser-sevice-grid">
+                <h4 class="pb-3">Weed Detection</h4>
+                <p>Our rover is equipped with advanced cameras to detect weeds with precision, ensuring effective weed
+                  management.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 col-sm-6 service-grid-wthree text-center">
+            <div class="ser-Agriculture-grid">
+              <div class="about-icon mb-md-4 mb-3">
+                <span class="fa fa-shower" aria-hidden="true"></span>
+              </div>
+              <div class="ser-sevice-grid">
+                <h4 class="pb-3">Organic Spraying</h4>
+                <p>We use organic and safe neem extract as a weedicide, ensuring a sustainable and environmentally friendly
+                  approach to weed control.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 col-sm-6 service-grid-wthree text-center">
+            <div class="ser-Agriculture-grid">
+              <div class="about-icon mb-md-4 mb-3">
+                <span class="fa fa-leaf" aria-hidden="true"></span>
+              </div>
+              <div class="ser-sevice-grid">
+                <h4 class="pb-3">Environmentally Conscious</h4>
+                <p>Our services focus on eco-friendly practices, promoting a healthy and sustainable agricultural ecosystem.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- //service -->
+    <!-- client -->
+    <section class="client py-lg-4 py-md-3 py-sm-3 py-3" id="client">
+      <div class="container py-lg-5 py-md-4 py-sm-4 py-3">
+        <h3 class="title text-center mb-lg-5 mb-md-4 mb-sm-4 mb-3">Our Clients</h3>
+        <div class="row">
+          <div class="col-lg-6 col-md-6 col-sm-6 cilent-item text-center">
+            <div class="mb-lg-4 mb-3 clients-ile-img">
+              <img src="../static/images/cc1.jpg" alt=" " class="img-fluid">
+            </div>
+            <div class="clients-color-ile text-center">
+              <p>Samuel S Mathew has been a visionary collaborator, embracing innovation in agricultural practices. His
+                commitment to
+                sustainable farming aligns perfectly with our shared goal of revolutionizing weed detection and organic
+                weedicide
+                application
+              </p>
+              <div class="mt-3 clients-txt-ile">
+                <h4>Samuel S Mathew</h4>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6 col-md-6 col-sm-6 cilent-item text-center">
+            <div class="mb-lg-4 mb-3 clients-ile-img">
+              <img src="../static/images/cc2.jpg" alt=" " class="img-fluid">
+            </div>
+            <div class="clients-color-ile text-center">
+              <p>Rohit Subash Nair, a dedicated partner, has consistently supported our mission to enhance agricultural
+                efficiency. His
+                enthusiasm for leveraging technology to detect and manage weeds showcases a forward-thinking approach to
+                modern farming.
+              </p>
+              <div class="mt-3 clients-txt-ile">
+                <h4>Rohit Subash Nair</h4>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--//client -->
+  <!-- features -->
+  <section class="features py-lg-4 py-md-3 py-sm-3 py-3">
+    <div class="container py-lg-5 py-md-4 py-sm-4 py-3">
+      <h3 class="title mb-lg-5 mb-md-4 mb-sm-4 mb-3">Key Features</h3>
+      <!--row -->
+      <div class="row">
+        <div class="col-lg-7 col-md-6 features-description">
+          <h4>Weed Detection and Precision Spraying</h4>
+          <p class="mt-2">Experience cutting-edge technology in weed detection and precise organic weedicide spraying. Our
+            rover, equipped with advanced cameras, identifies weeds and administers neem-based weedicide, ensuring
+            eco-friendly and efficient farming practices.</p>
+          <!-- <div class="view-buttn mt-lg-4 mt-3">
+                <a href="#" class="">Explore More</a>
+              </div> -->
+        </div>
+        <div class="col-lg-5 col-md-6">
+          <img src="../static/images/rover_image.jpg" alt="rover image" class="img-fluid">
+        </div>
+      </div>
+      <!--// row -->
+      <!-- row -->
+      <div class="row my-lg-5 my-md-4 my-3">
+        <div class="col-lg-5 col-md-6">
+          <img src="../static/images/neem_extract.jpg" alt="neem extract image" class="img-fluid">
+        </div>
+        <div class="col-lg-7 col-md-6 features-description">
+          <h4>Neem Extract Weedicide</h4>
+          <p class="mt-2">Discover the power of organic weed control with our neem extract weedicide. Derived from neem
+            plants, this natural solution effectively targets weeds while maintaining the integrity of your crops.</p>
+          <!-- <div class="view-buttn mt-lg-4 mt-3">
+                <a href="#" class="">Learn More</a>
+              </div> -->
+        </div>
+      </div>
+      <!--// row -->
+      <!-- row -->
+      <div class="row">
+        <div class="col-lg-7 col-md-6 features-description">
+          <h4>Sustainable Farming Practices</h4>
+          <p class="mt-2">Embrace sustainable farming practices with our integrated solutions. From eco-friendly weed
+            control to efficient resource utilization, our mission is to support you in cultivating a greener and more
+            productive future.</p>
+          <!-- <div class="view-buttn mt-lg-4 mt-3">
+                <a href="#" class="scroll">Read More</a>
+              </div> -->
+        </div>
+        <div class="col-lg-5 col-md-6">
+          <img src="../static/images/sustainable_farming.jpg" alt="sustainable farming image" class="img-fluid">
+        </div>
+      </div>
+      <!--// row -->
+    </div>
+  </section>
+  <!-- features -->
+    <!-- footer -->
+    <footer class="py-lg-4 py-md-3 py-sm-3 py-3">
+      <div class="container py-lg-5 py-md-5 py-sm-4 py-3">
+        <div class="footer-w3layouts-head text-center">
+          <h2><a href="{{ url_for('index') }}">AgriVision</a></h2>
+        </div>
+        <div class="social-icons mt-lg-5 mt-md-4 mt-3 text-center">
+          <ul>
+            <li><a href="#"><span class="fa fa-facebook"></span></a></li>
+            <li><a href="#"><span class="fa fa-twitter"></span></a></li>
+            <li><a href="#"><span class="fa fa-rss"></span></a></li>
+            <li><a href="#"><span class="fa fa-envelope"></span></a></li>
+            <li><a href="#"><span class="fa fa-instagram"></span></a></li>
+          </ul>
+        </div>
+        <div class="bottem-wthree-footer text-center pt-md-4 pt-3">
+          <p>
+            © 2024 AgriVision. All Rights Reserved.
+          </p>
+        </div>
+        <!-- move icon -->
+        <div class="text-center">
+          <a href="#home" class="move-top text-center mt-3"><i class="fa fa-arrow-up" aria-hidden="true"></i></a>
+        </div>
+        <!--//move icon -->
+      </div>
+    </footer>
+    <!--//footer -->
+  </body>
+</html>
