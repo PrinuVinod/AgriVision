@@ -1,4 +1,5 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, jsonify
+import subprocess
 
 app = Flask(__name__)
 
@@ -28,14 +29,13 @@ def service():
 
 @app.route('/start_detection', methods=['POST'])
 def start_detection():
+    script_path = 'detect.py'
+
     try:
-        # Run your detect.py script using subprocess
-        result = subprocess.run(['python', 'detect.py'], capture_output=True, text=True)
-        print("Detection output:", result.stdout)
-        return 'Detection started successfully'
-    except Exception as e:
-        print("Error starting detection:", str(e))
-        return 'Error starting detection'
+        subprocess.run(['python', script_path], check=True)
+        return jsonify({'status': 'success', 'message': 'Detection started successfully'})
+    except subprocess.CalledProcessError as e:
+        return jsonify({'status': 'error', 'message': f'Error starting detection: {e}'})
 
 if __name__ == '__main__':
     app.run(debug=True)
