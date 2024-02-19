@@ -121,8 +121,18 @@ cv2.imwrite(output_image_path, image)
 # Print the output image path
 print(output_image_path)
 
-print("[STATUS]   : Completed")
-print("[END]")
+# Prepare the detection results as a JSON response
+detection_results = {
+    'accuracy': confidences[i],
+    'detected_label': LABELS[classIDs[i]]
+}
 
 # Optionally, you can return the path of the output image if needed
 print("Output image saved at:", output_image_path)
+
+print("[STATUS]   : Completed")
+print("[END]")
+
+# Output the detection results as JSON
+import json
+print(json.dumps(detection_results))
