@@ -1,0 +1,23 @@
+/* Add a wrapper to simulate the scrollbar */
+.scrollbar-wrapper {
+    height: 100vh;
+    overflow-y: scroll;
+}
+
+/* Style for the scrollbar thumb */
+.scrollbar-wrapper::-webkit-scrollbar-thumb {
+    background-color: #4CAF50;
+    /* Initial green color representing grass */
+}
+
+/* Style for the scrollbar track */
+.scrollbar-wrapper::-webkit-scrollbar-track {
+    background-color: #8B4513;
+    /* Initial brown color representing soil */
+}
+
+/* Add a class to gradually change colors based on scroll position */
+.scrollbar-wrapper.scrolled::-webkit-scrollbar-thumb {
+    background-color: #8B4513;
+    /* Brown color as grass reduces */
+}
