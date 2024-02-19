@@ -3,6 +3,10 @@
     - css
     - js
     - images
+    - uploads
+      - user_image.jpg
+    - output
+      - annotated_image.jpg
   - templates
     - index.html
     - detection.html
@@ -10,10 +14,6 @@
     - contact.html
     - gallery.html
     - service.html
-  - uploads
-    - (user_image.jpg - uploaded images are saved here)
-  - output
-    - annotated_image.jpg (annotated images are saved here)
   - app.py
   - detect.py
   - crop_weed_detection.weights
