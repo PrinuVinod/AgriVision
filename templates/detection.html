@@ -53,7 +53,7 @@
                <a href="{{ url_for('index') }}">Home</a>
                <span>/ /</span>
             </li>
-            <li>detection</li>
+            <li>Detection</li>
          </ul>
       </div>
    </div>
@@ -63,18 +63,24 @@
       <div class="row">
          <div class="col-md-6 offset-md-3">
             <form id="uploadForm" enctype="multipart/form-data">
-               <div class="form-group">
-                  <label for="fileInput">Choose File</label>
+               <div class="form-group" id="fileInputDiv">
+                  <h1><label for="fileInput">Choose File For Detection</label></h1>
                   <input type="file" class="form-control-file" id="fileInput" name="file" accept=".jpg, .jpeg, .png">
                </div>
-               <div class="form-group">
-                  <img id="imagePreview" class="img-fluid" alt="Image Preview">
-               </div>
-               <button type="button" class="btn btn-primary" id="startDetection">Start Detecting</button>
    
-               <!-- New div to display output -->
-               <div id="outputDiv" class="mt-3">
-                  <img id="outputImage" class="img-fluid" alt="Output Image">
+               <div class="form-group" id="imagePreviewDiv" style="display: none;">
+                  <h2>Input</h2>
+                  <img id="imagePreview" class="img-fluid" alt="Image Preview"
+                     src="{{ url_for('static', filename='uploads/user_image.jpg') }}">
+               </div>
+   
+               <button type="button" class="btn btn-primary" id="startDetection" style="display: none;">Start
+                  Detecting</button>
+   
+               <div id="outputDiv" class="mt-3" style="display: none;">
+                  <h2>Output</h2>
+                  <img id="outputImage" class="img-fluid" alt="Output Image"
+                     src="{{ url_for('static', filename='output/annotated_image.jpg') }}">
                </div>
             </form>
          </div>
@@ -112,7 +118,6 @@
    </footer>
    <!--//footer -->
 
-   <!-- Javascript files-->
    <script src="../static/js/jquery.min.js"></script>
    <script src="../static/js/bootstrap.bundle.min.js"></script>
    <script src="../static/js/jquery-3.0.0.min.js"></script>
@@ -129,13 +134,18 @@
                var reader = new FileReader();
                reader.onload = function (e) {
                   $('#imagePreview').attr('src', e.target.result);
-                  $('#imagePreview').show();
+                  $('#imagePreviewDiv').show();
+                  $('#startDetection').show();
+                  $('#fileInputDiv').hide();
                };
                reader.readAsDataURL(input.files[0]);
             }
          });
 
          $("#startDetection").click(function () {
+            // Hide the button after clicking
+            $(this).hide();
+
             $.ajax({
                type: "POST",
                url: "/start_detection",
@@ -146,10 +156,10 @@
                   console.log("Detection started successfully");
 
                   // Update the source of the image after detection is completed
-                  $('#imagePreview').attr('src', 'output/annotated_image.jpg');
+                  $('#imagePreview').attr('src', 'static/uploads/user_image.jpg');
 
                   // Display the annotated image in the output div
-                  $('#outputImage').attr('src', 'output/annotated_image.jpg');
+                  $('#outputImage').attr('src', 'static/output/annotated_image.jpg');
                   $('#outputDiv').show();
                },
                error: function (error) {
@@ -159,7 +169,6 @@
          });
       });
    </script>
-
 </body>
 
 </html>

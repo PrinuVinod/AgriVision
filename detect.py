@@ -24,7 +24,7 @@ print("Loading Images from disk...")
 net = cv2.dnn.readNetFromDarknet(configPath, weightsPath)
 
 # load our input image and grab its spatial dimensions
-image = cv2.imread('uploads/user_image.jpg')
+image = cv2.imread('static/uploads/user_image.jpg')
 (H, W) = image.shape[:2]
 
 # parameters
@@ -105,18 +105,21 @@ if len(idxs) > 0:
         cv2.putText(image, text, (x, y), cv2.FONT_HERSHEY_SIMPLEX, 0.8, color, 2)
 
 # Display the image
-cv2.imshow('Output', image)
+# cv2.imshow('Output', image)
 cv2.waitKey(0)
 cv2.destroyAllWindows()
 
 # Save the annotated image
-output_folder = 'output'
+output_folder = 'static/output'
 
 # Create the output folder if it doesn't exist
 os.makedirs(output_folder, exist_ok=True)
 
 output_image_path = os.path.join(output_folder, 'annotated_image.jpg')
 cv2.imwrite(output_image_path, image)
+
+# Print the output image path
+print(output_image_path)
 
 print("[STATUS]   : Completed")
 print("[END]")
