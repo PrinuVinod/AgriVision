@@ -71,7 +71,7 @@
                   <!-- Display Input Image -->
                   <div class="col-md-6">
                      <div class="form-group mt-3" id="imagePreviewDiv" style="display: none;">
-                        <h2>Input</h2>
+                        <h1>Input</h1>
                         <img id="imagePreview" class="img-fluid" alt="Image Preview"
                            src="{{ url_for('static', filename='uploads/user_image.jpg') }}">
                      </div>
@@ -80,17 +80,22 @@
                   <!-- Display Output Image -->
                   <div class="col-md-6">
                      <div class="form-group mt-3" id="outputDiv" style="display: none;">
-                        <h2>Output</h2>
+                        <h1>Output</h1>
                         <img id="outputImage" class="img-fluid" alt="Output Image"
                            src="{{ url_for('static', filename='output/annotated_image.jpg') }}">
                      </div>
                   </div>
                </div>
+
+               <div id="loadingSpinner" class="spinner-border text-primary" role="status" style="display: none;">
+                  <span class="sr-only">Loading...</span>
+               </div>
    
-               <button type="button" class="btn btn-primary mt-3" id="startDetection" style="display: none;">Start
-                  Detecting</button>
+               <button type="button" class="btn btn-primary mt-3" id="startDetection" style="display: none;">Start Detecting</button>
             </form>
-            <div id="detectionResults"></div>
+            <div id="detectionResults">
+               <pre id="outputText"></pre>
+            </div>
          </div>
       </div>
    </div>
@@ -151,11 +156,8 @@
          });
 
          $("#startDetection").click(function () {
-            // Hide the button after clicking
             $(this).hide();
-
-            // Show a loading message or spinner while waiting for the detection
-            // For example: $("#loadingMessage").show();
+            $('#loadingSpinner').show();
 
             $.ajax({
                type: "POST",
@@ -165,8 +167,6 @@
                data: new FormData($("#uploadForm")[0]),
                success: function (response) {
                   console.log("Detection started successfully");
-
-                  // Log the response to check its content
                   console.log(response);
 
                   // Update the source of the image after detection is completed
@@ -176,11 +176,22 @@
                   $('#outputImage').attr('src', 'static/output/annotated_image.jpg');
                   $('#outputDiv').show();
 
-                  // Display the detection results
-                  $('#detectionResults').html(response);
+                  $.ajax({
+                     type: "GET",
+                     url: "static/output/detection_results.txt",
+                     dataType: "text",
+                     success: function (textData) {
+                        $('#outputText').text(textData);
+                     },
+                     error: function (error) {
+                        console.error("Error reading text file: ", error);
+                     }
+                  });
+                  $('#loadingSpinner').hide();
                },
                error: function (error) {
                   console.error("Error starting detection: ", error);
+                  $('#loadingSpinner').hide();
                }
             });
          });

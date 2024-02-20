@@ -127,12 +127,24 @@ detection_results = {
     'detected_label': LABELS[classIDs[i]]
 }
 
-# Optionally, you can return the path of the output image if needed
+# Save accuracy and detected label to a text file for unique detections
+output_text_path = os.path.join(output_folder, 'detection_results.txt')
+with open(output_text_path, 'w') as text_file:
+    seen_labels = set()
+    for i in range(len(boxes)):
+        detected_label = LABELS[classIDs[i]]
+        if detected_label not in seen_labels:
+            text_file.write("Accuracy -> {:.4f}\n".format(confidences[i]))
+            text_file.write("Detected Label -> {}\n".format(detected_label))
+            seen_labels.add(detected_label)
+
+# Print the output paths
 print("Output image saved at:", output_image_path)
+print("Detection results saved at:", output_text_path)
 
 print("[STATUS]   : Completed")
 print("[END]")
 
 # Output the detection results as JSON
 import json
-print(json.dumps(detection_results))
+print(json.dumps(detection_results))    
