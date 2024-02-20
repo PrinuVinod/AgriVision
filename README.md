@@ -23,7 +23,7 @@ AgriVision is a groundbreaking agricultural technology that harnesses the power 
 
 ## `Created Using`
 > FrontEnd > ***HTML***, ***CSS***, ***JavaScript***<br>
-BackEnd > ***MongoDB***
+BackEnd > ***MongoDB***<br>
 Framework > ***Flask***
 
 ### `Installation`
