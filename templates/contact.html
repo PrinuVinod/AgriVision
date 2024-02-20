@@ -5,15 +5,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" href="static/images/logo.png">
-    <script>
-      addEventListener("load", function () {
-      	setTimeout(hideURLbar, 0);
-      }, false);
-      
-      function hideURLbar() {
-      	window.scrollTo(0, 1);
-      }
-    </script>
     <link href="../static/css/bootstrap.min.css" rel="stylesheet" type="text/css" media="all">
     <link href="../static/css/font-awesome.min.css" rel="stylesheet">
     <link href="../static/css/style.css" rel='stylesheet' type='text/css' media="all">
@@ -24,7 +15,6 @@
     <!--header-->
     <div class="header-outs inner_page-banner " id="home">
       <div class="headder-top">
-        <!--//navigation section -->
         <!-- nav -->
         <nav>
           <div id="logo">
@@ -66,17 +56,21 @@
         <div class="row">
           <!--//contact-map -->
           <div class="address_mail_footer_grids col-lg-6 col-md-6">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3539.812628729253!2d153.014155!3d-27.4750921!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6b915a0835840a2f%3A0xdd5e3f5c208dc0e1!2sMelbourne+St%2C+South+Brisbane+QLD+4101%2C+Australia!5e0!3m2!1sen!2sin!4v1492257477691"></iframe>
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1941.0522491041152!2d76.82333580876534!3d9.528780301762609!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b063626ed32c771%3A0xff305e1affdbb4b4!2sAmal%20Jyothi%20College%20of%20Engineering!5e1!3m2!1sen!2sin!4v1708408056337!5m2!1sen!2sin"
+              width="500" height="400" style="border:0; width: 500px; height: 490px;" allowfullscreen="" loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"></iframe>
           </div>
           <!--contact-map -->
           <div class="col-lg-6 col-md-6 contact-form-txt">
-            <form action="#" method="post">
+            <form id="request" class="main_form" name="contactForm">
               <div class="w3pvt-wls-contact-mid">
                 <div class="form-group contact-forms">
                   <input class="form_control" placeholder="Your Name" type="text" name="name" id="name" for="name" required>
                 </div>
                 <div class="form-group contact-forms">
                   <input class="form_control" placeholder="Email" type="email" name="email" id="email" for="email" required>
+                </div>
                 <div class="form-group contact-forms">
                   <input class="form_control" placeholder="Phone Number" type="number" name="phone number" id="phone number" for="phone number" required>
                 </div>
@@ -89,26 +83,23 @@
             <div class="row mt-lg-5 mt-md-4 mt-3">
               <div class="contact-list-grid col-lg-6 col-md-6 col-sm-6">
                 <h4>Branch 1</h4>
-                <p class="pt-2">Melbourne St,South Birbane 4101</p>
-                <p>Austraila</p>
+                <p class="pt-2">Santhom Men's Hostel</p>
+                <p>Kottayam</p>
               </div>
               <div class="contact-list-grid col-lg-6 col-md-6 col-sm-6">
                 <h4>Branch 2</h4>
-                <p class="pt-2">Melbourne St,South Birbane 4101</p>
-                <p>Austraila</p>
+                <p class="pt-2">Patharam, Karunagapally</p>
+                <p>Kollam</p>
               </div>
             </div>
             <div class="row mt-lg-4 mt-3">
               <div class="contact-list-grid col-lg-6 col-md-6 col-sm-6">
                 <h4>Phone</h4>
-                <p class="pt-2">(000)1122333</p>
-                <p>+(000) 123 4565 32</p>
+                <p>+91 1234567890</p>
               </div>
               <div class="contact-list-grid col-lg-6 col-md-6 col-sm-6">
                 <h4>Email</h4>
-                <p class="pt-2"><a href="mailto:info@example.com">info@example1.com</a> 
-                </p>
-                <p class="pt-2"><a href="mailto:info@example.com">info@example.com</a> 
+                <p class="pt-2"><a href="mailto:agrivisionteam@gmail.com">agrivisionteam@gmail.com</a> 
                 </p>
               </div>
             </div>
@@ -128,7 +119,7 @@
             <li><a href="#"><span class="fa fa-facebook"></span></a></li>
             <li><a href="#"><span class="fa fa-twitter"></span></a></li>
             <li><a href="#"><span class="fa fa-rss"></span></a></li>
-            <li><a href="#"><span class="fa fa-envelope"></span></a></li>
+            <li><a href="mailto:agrivisionteam@gmail.com"><span class="fa fa-envelope"></span></a></li>s
             <li><a href="#"><span class="fa fa-instagram"></span></a></li>
           </ul>
         </div>
