@@ -29,5 +29,7 @@ BackEnd > ***JavaScript***
 [AgriVision](https://prinuvinod.github.io/AgriVision/)
 
 ```
-pip install flask pymongo
+python -m venv venv
+venv\Scripts\activate
+pip install -r requirements.txt
 ```
