@@ -25,9 +25,7 @@ AgriVision is a groundbreaking agricultural technology that harnesses the power 
 > FrontEnd > ***HTML***, ***CSS*** <br>
 BackEnd > ***JavaScript***
 
-### `Check Out our Website`
-[AgriVision](https://prinuvinod.github.io/AgriVision/)
-
+### `Installation`
 ```
 python -m venv venv
 venv\Scripts\activate
